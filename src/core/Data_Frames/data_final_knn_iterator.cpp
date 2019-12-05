@@ -36,14 +36,14 @@ int Finalknn::Iterator::write(QVector<float> dists, QVector<float> indicies, int
     EDEBUG_FUNC(this, &dists, &indicies, index);
     if(index < 0 || index > _parent->_rowSize)
     {
-        E_MAKE_EXCEPTION(e);
+        E_MAKE_EXCEPTION(e)
         e.setTitle(tr("Seek Error"));
         e.setDetails(tr("Seek encountered an unknown error."));
         throw e;
     }
     if(dists.size() > _parent->_columnSize)
     {
-        E_MAKE_EXCEPTION(e);
+        E_MAKE_EXCEPTION(e)
         e.setTitle(tr("Seek Error"));
         e.setDetails(tr("Seek encountered an unknown error."));
         throw e;
@@ -79,7 +79,7 @@ void Finalknn::Iterator::read(QVector<float> &dists, QVector<float> &indicies, i
     EDEBUG_FUNC(this, &dists, &indicies, index);
     if(index < 0 || index > _parent->_rowSize)
     {
-        E_MAKE_EXCEPTION(e);
+        E_MAKE_EXCEPTION(e)
         e.setTitle(tr("Seek Error"));
         e.setDetails(tr("Seek encountered an unknown error."));
         throw e;

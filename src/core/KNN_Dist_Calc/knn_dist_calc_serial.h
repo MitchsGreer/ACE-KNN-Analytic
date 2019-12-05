@@ -19,7 +19,7 @@ public:
    virtual std::unique_ptr<EAbstractAnalyticBlock> execute(const EAbstractAnalyticBlock* block) override final;
 
     QVector<float> readRow(int index);
-    double dist(QVector<float> sample, QVector<float> compare);
+    float dist(QVector<float> sample, QVector<float> compare);
     int populateMatrixRow(const KNNDistCalc::Sample * sample, QVector<float>& row);
 
 private:

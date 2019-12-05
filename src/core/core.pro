@@ -31,15 +31,6 @@ SOURCES += \
     Export_Final_KNN/export_final_knn_input.cpp \
     Factories/analytic_factory.cpp \
     Factories/data_factory.cpp \
-    KNN_Analytic/knn_analytic.cpp \
-    KNN_Analytic/knn_analytic_cuda.cpp \
-    KNN_Analytic/knn_analytic_cuda_kernel.cpp \
-    KNN_Analytic/knn_analytic_cuda_worker.cpp \
-    KNN_Analytic/knn_analytic_input.cpp \
-    KNN_Analytic/knn_analytic_opencl.cpp \
-    KNN_Analytic/knn_analytic_opencl_kernal.cpp \
-    KNN_Analytic/knn_analytic_opencl_worker.cpp \
-    KNN_Analytic/knn_analytic_serial.cpp \
     KNN_Dist_Calc/knn_dist_calc.cpp \
     KNN_Dist_Calc/knn_dist_calc_cuda.cpp \
     KNN_Dist_Calc/knn_dist_calc_cuda_kernel.cpp \
@@ -79,15 +70,6 @@ HEADERS += \
     Export_Final_KNN/export_final_knn_input.h \
     Factories/analytic_factory.h \
     Factories/data_factory.h \
-    KNN_Analytic/knn_analytic.h \
-    KNN_Analytic/knn_analytic_cuda.h \
-    KNN_Analytic/knn_analytic_cuda_kernel.h \
-    KNN_Analytic/knn_analytic_cuda_worker.h \
-    KNN_Analytic/knn_analytic_input.h \
-    KNN_Analytic/knn_analytic_opencl.h \
-    KNN_Analytic/knn_analytic_opencl_kernal.h \
-    KNN_Analytic/knn_analytic_opencl_worker.h \
-    KNN_Analytic/knn_analytic_serial.h \
     KNN_Dist_Calc/knn_dist_calc.h \
     KNN_Dist_Calc/knn_dist_calc_cuda.h \
     KNN_Dist_Calc/knn_dist_calc_cuda_kernel.h \

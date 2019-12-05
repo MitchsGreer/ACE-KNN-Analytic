@@ -78,10 +78,10 @@ int KNNDistCalc::Serial::populateMatrixRow(const KNNDistCalc::Sample * sample, Q
 *
 * @result The distance between the two samples.
 */
-double KNNDistCalc::Serial::dist(QVector<float> sample, QVector<float> compare)
+float KNNDistCalc::Serial::dist(QVector<float> sample, QVector<float> compare)
 {
     EDEBUG_FUNC(this, &sample, &compare);
-    double sum = 0.0;
+    float sum = 0.0;
     for(int j = 0; j < compare.size(); j++)
     {
         sum += abs(compare.at(j) - sample.at(j));

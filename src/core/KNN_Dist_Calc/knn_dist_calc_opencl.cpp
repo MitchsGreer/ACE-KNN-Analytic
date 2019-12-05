@@ -54,7 +54,12 @@ void KNNDistCalc::OpenCL::initialize(::OpenCL::Context* context)
     // Set this object's context pointer to the one given and then create this
     // object's OpenCL program.
     _context = context;
-    _program = new ::OpenCL::Program(context,{"/home/mitchell/Documents/KNN_Project/src/opencl/dist.cl"},this);
+
+    char path[256];
+    getcwd(path, 256);
+    QString pathname(path);
+    pathname += "/../../src/opencl/dist.cl";
+    _program = new ::OpenCL::Program(context,{pathname},this);
 
     // create command queue
     _queue = new ::OpenCL::CommandQueue(context, context->devices().first(), this);

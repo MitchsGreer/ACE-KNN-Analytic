@@ -2,6 +2,7 @@
 #define KNN_DIST_CALC_OPENCL_H
 #include <ace/core/core.h>
 #include <ace/core/openclxx.h>
+#include <unistd.h>
 #include "knn_dist_calc.h"
 //
 

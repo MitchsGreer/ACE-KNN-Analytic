@@ -34,7 +34,7 @@ void TriangleMatrix::Iterator::read(int index, QVector<float>& dist, QVector<flo
     EDEBUG_FUNC(this, index, &dist, &ind);
     if(index < 0 || index > _parent->rowSize())
     {
-        E_MAKE_EXCEPTION(e);
+        E_MAKE_EXCEPTION(e)
         e.setTitle(tr("Seek Error"));
         e.setDetails(tr("TriangleMatrix Iterator encountered an unknown error."));
         throw e;
@@ -75,7 +75,7 @@ void TriangleMatrix::Iterator::write(int index, QVector<float> row)
     EDEBUG_FUNC(this, index, &row);
     if(index < 0 || index > (_parent->rowSize()))
     {
-        E_MAKE_EXCEPTION(e);
+        E_MAKE_EXCEPTION(e)
         e.setTitle(tr("Seek Error"));
         e.setDetails(tr("TriangleMatrix Iterator encountered an unknown error."));
         throw e;

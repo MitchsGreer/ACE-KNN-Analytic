@@ -1,5 +1,4 @@
 #include "analytic_factory.h"
-#include "../KNN_Analytic/knn_analytic.h"
 #include "../Import_Sample_Set/importexpressionmatrix.h"
 #include "../Export_Sample_Set/exportexpressionmatrix.h"
 #include "../Export_Final_KNN/export_final_knn.h"
