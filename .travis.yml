@@ -5,7 +5,7 @@ git:
   quit: true
 
 os: linux
-compiler: c++
+compiler: g++
 
 install:
   - sh deps/ace.sh
