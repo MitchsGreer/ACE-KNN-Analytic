@@ -9,3 +9,4 @@ compiler: c++
 
 install:
   - sh deps/ace.sh
+  - ls ~/software
