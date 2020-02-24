@@ -1,16 +1,11 @@
 language: c++
 sudo: true
 
+git:
+  quit: true
+
 os: linux
 compiler: c++
 
 install:
   - sh deps/ace.sh
-  - cd build/
-
-build:
-  - qmake ../src/KNN.pro PREFIX=~/software
-  - make qmake_all
-  - make
-  - make qmake_all
-  - sudo make install
