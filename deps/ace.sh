@@ -5,15 +5,6 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 #################################
-#Useful Commands
-#################################
-sudo apt-get install git -y
-sudo apt-get install curl -y
-sudo apt-get install sshfs -y
-sudo apt-get install htop -y
-sudo apt-get install libreoffice -y
-
-#################################
 #ACE prereqs
 #################################
 sudo apt-get install gcc -y

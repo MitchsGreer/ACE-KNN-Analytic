@@ -6,9 +6,9 @@ compiler: c++
 
 install:
   - sh deps/ace.sh
+  - cd build/
 
 build:
-  - cd build/
   - qmake ../src/KNN.pro PREFIX=~/software
   - make qmake_all
   - make
