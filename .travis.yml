@@ -1,0 +1,16 @@
+language: c++
+sudo: true
+
+os: linux
+compiler: c++
+
+install:
+  - sh deps/ace.sh
+
+build:
+  - cd build/
+  - qmake ../src/KNN.pro PREFIX=~/software
+  - make qmake_all
+  - make
+  - make qmake_all
+  - sudo make install

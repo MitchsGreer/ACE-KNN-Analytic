@@ -2,27 +2,17 @@
 #include "knn_dist_calc_opencl_worker.h"
 //
 
-
-
-
-
 /*!
  * Constructs a new OpenCL object with the given math transform parent.
  *
  * @param parent Pointer to the parent math transform analytic of this new OpenCL
  *               object.
  */
-KNNDistCalc::OpenCL::OpenCL(KNNDistCalc* parent):
-   EAbstractAnalyticOpenCL(parent),
-   _base(parent)
+KNNDistCalc::OpenCL::OpenCL(KNNDistCalc *parent) : EAbstractAnalyticOpenCL(parent),
+                                                   _base(parent)
 {
     EDEBUG_FUNC(this, &parent);
 }
-
-
-
-
-
 
 /*!
  * Implements the interface that creates and returns a new OpenCL worker for the
@@ -33,13 +23,8 @@ KNNDistCalc::OpenCL::OpenCL(KNNDistCalc* parent):
 std::unique_ptr<EAbstractAnalyticOpenCLWorker> KNNDistCalc::OpenCL::OpenCL::makeWorker()
 {
     EDEBUG_FUNC(this);
-    return std::unique_ptr<EAbstractAnalyticOpenCLWorker>(new Worker(_base,this,_context,_program));
+    return std::unique_ptr<EAbstractAnalyticOpenCLWorker>(new Worker(_base, this, _context, _program));
 }
-
-
-
-
-
 
 /*!
  * Implements the interface that initializes all OpenCL resources used by this
@@ -48,7 +33,7 @@ std::unique_ptr<EAbstractAnalyticOpenCLWorker> KNNDistCalc::OpenCL::OpenCL::make
  * @param context The OpenCL context to used to initialize all other OpenCL
  *                resources.
  */
-void KNNDistCalc::OpenCL::initialize(::OpenCL::Context* context)
+void KNNDistCalc::OpenCL::initialize(::OpenCL::Context *context)
 {
     EDEBUG_FUNC(this, &context);
     // Set this object's context pointer to the one given and then create this
@@ -58,15 +43,15 @@ void KNNDistCalc::OpenCL::initialize(::OpenCL::Context* context)
     char path[256];
     getcwd(path, 256);
     QString pathname(path);
-    pathname += "/../../src/opencl/dist.cl";
-    _program = new ::OpenCL::Program(context,{pathname},this);
+    pathname += "/home/mitchel/ACE-KNN-Analytic/src/opencl";
+    _program = new ::OpenCL::Program(context, {pathname}, this);
 
     // create command queue
     _queue = new ::OpenCL::CommandQueue(context, context->devices().first(), this);
 
     // create buffer for expression data
     std::vector<float> rawData = _base->_in->dumpRawData();
-    _expressions = ::OpenCL::Buffer<cl_float>(context,rawData.size());
+    _expressions = ::OpenCL::Buffer<cl_float>(context, rawData.size());
 
     // copy expression data to device
     _expressions.mapWrite(_queue).wait();
@@ -75,4 +60,3 @@ void KNNDistCalc::OpenCL::initialize(::OpenCL::Context* context)
 
     _expressions.unmap(_queue).wait();
 }
-

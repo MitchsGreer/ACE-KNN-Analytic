@@ -1,19 +1,9 @@
 //#include "knn_dist_calc_cuda_kernel.h"
 ////
 
-
-
-
-
-
 ////the program needs to be changed
 //KNNDistCalc::CUDA::Kernel::Kernel(::CUDA::Program* program) : ::CUDA::Kernel(program,"mathTransform")
 //{}
-
-
-
-
-
 
 //::CUDA::Event KNNDistCalc::CUDA::Kernel::execute(const ::CUDA::Stream& stream, ::CUDA::Buffer<float>* buffer)
 //{
